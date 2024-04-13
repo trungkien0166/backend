@@ -1,0 +1,3 @@
+file .html không được viết code php
+file .html viết được code html và php 
+mặc định  webserver hiểu  trong file .php  code html 
