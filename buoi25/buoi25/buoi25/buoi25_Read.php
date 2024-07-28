@@ -31,7 +31,24 @@ echo "Kết nối thành công";
 // $sql = "SELECT * FROM student WHERE firstname LIKE '%h%'";
 // $sql = "SELECT employee.*, department.name AS dept_name FROM employee JOIN department ON employee.dept_id=department.dept_id;";
 
-$sql = "SELECT * FROM student";
+// $sql = "SELECT * FROM student";
+// $sql = "SELECT * FROM student WHERE id >= 3 ";
+// ASC : tăng dần  DESC : giảm dần 
+// $sql = "SELECT * FROM student ORDER BY firstname DESC ";
+// 3 sinh viên /trang
+// LIMIT start_index, item_per_page
+// trang 1 
+// $sql = "SELECT * FROM  student LIMIT 0, 3 ";
+// // trang 2 
+// $sql = "SELECT * FROM  student LIMIT 3, 3 ";
+// trang 3 
+// $sql = "SELECT * FROM  student LIMIT 6, 3 ";
+// start_index = (page - 1)* item_per_page;
+
+// $sql = "SELECT * FROM  student WHERE firstname LIKE '%h%' ";
+$sql = "SELECT employee.*,department.name AS dept_name  FROM employee JOIN department ON employee.dept_id = department.dept_id;
+";
+
 
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
@@ -44,5 +61,4 @@ if ($result->num_rows > 0) {
 } else {
     echo "0 results";
 }
-
 $conn->close();

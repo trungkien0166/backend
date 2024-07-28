@@ -34,6 +34,8 @@
                 mysqli_set_charset($conn, "utf8");
 
                 $sql = "SELECT * FROM student";
+                // $sql = "SELECT * FROM student WHERE id = 3 ";
+
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     // output data of each row
